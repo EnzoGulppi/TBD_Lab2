@@ -96,7 +96,7 @@
                 </div>
                 <!-- Seleccionar habilidades -->
                 <h2 class="text-center">Habilidades asociadas</h2>
-                <table class="mb-3">
+                <table class="habilidades">
                   <tr v-for="(objeto, indice) in habilidades" :key="indice">
                     <td>{{ objeto.nombre }}</td>
                     <td>
@@ -110,7 +110,6 @@
                 </table>
               </section>
             </div>
-            <div class="col-md-2"></div>
             <div class="col-md-5 mb-3" id="mapa">
               <MapaRegistro
               @coordinatesSelected="handleCoordinatesSelected"
@@ -294,11 +293,16 @@
   .h2 + table {
     margin-top: 5px;
   }
+  
+  .habilidades{
+    margin-left: 70px;
+  
+  }
 
   .table th,
   .table td {
     padding: 5px;
-    background-color: rgba(30, 86, 101, 0.5);
+    background-color: rgb(37, 174, 192);
     text-align: center;
   }
   .emergency-page {
@@ -311,4 +315,12 @@
   .emergency-page h1{
     background-color: white;
   }
+
+  .col-md-5 {
+  margin-right: 90px; /* Ajusta el margen derecho según sea necesario */
+}
+
+#mapa {
+  margin-top: 30px; /* Ajusta el margen superior del mapa según sea necesario */
+}
   </style>
