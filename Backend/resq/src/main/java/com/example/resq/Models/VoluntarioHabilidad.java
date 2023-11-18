@@ -2,14 +2,14 @@ package com.example.resq.Models;
 
 public class VoluntarioHabilidad {
     private int idVoluntarioHabilidad;
-    private int idvoluntario;
+    private int idVoluntario;
     private int idHabilidad;
 
     //Contructor
 
-    public VoluntarioHabilidad(int idVoluntarioHabilidad, int idvoluntario, int idHabilidad) {
+    public VoluntarioHabilidad(int idVoluntarioHabilidad, int idVoluntario, int idHabilidad) {
         this.idVoluntarioHabilidad = idVoluntarioHabilidad;
-        this.idvoluntario = idvoluntario;
+        this.idVoluntario = idVoluntario;
         this.idHabilidad = idHabilidad;
     }
 
@@ -23,12 +23,12 @@ public class VoluntarioHabilidad {
         this.idVoluntarioHabilidad = idVoluntarioHabilidad;
     }
 
-    public int getIdvoluntario() {
-        return idvoluntario;
+    public int getIdVoluntario() {
+        return idVoluntario;
     }
 
-    public void setIdvoluntario(int idvoluntario) {
-        this.idvoluntario = idvoluntario;
+    public void setIdVoluntario(int idVoluntario) {
+        this.idVoluntario = idVoluntario;
     }
 
     public int getIdHabilidad() {

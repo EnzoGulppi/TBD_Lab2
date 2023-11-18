@@ -99,4 +99,64 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
         }
         return null;
     }
+
+    @Override
+    public void saveVoluntario(Voluntario voluntario){
+        String query = "INSERT INTO Voluntario (rut, nombres, apellidos, fecha_nac, disponibilidad, telefono, rol, contrasena, region, longitud, latitud, geom) " +
+                "VALUES (:rut, :nombres, :apellidos, :fecha_nac, :disponibilidad, :telefono, :rol, :contrasena, :region, :longitud, :latitud, ST_PointFromText('POINT(' || :longitud || ' ' || :latitud || ')'))";
+        try( Connection connection = sql2o.open()) {
+            connection.createQuery(query)
+                    .addParameter("rut", voluntario.getRut())
+                    .addParameter("nombres", voluntario.getNombres())
+                    .addParameter("apellidos", voluntario.getApellidos())
+                    .addParameter("fechaNacimiento", voluntario.getFechaNacimiento())
+                    .addParameter("disponibilidad", voluntario.getDisponibilidad())
+                    .addParameter("telefono", voluntario.getTelefono())
+                    .addParameter("rol", voluntario.getRol())
+                    .addParameter("contrasena", voluntario.getContrasena())
+                    .addParameter("region", voluntario.getRegion())
+                    .addParameter("longitud", voluntario.getLongitud())
+                    .addParameter("latitud", voluntario.getLatitud())
+                    .executeUpdate();
+        }
+    }
+
+    @Override
+    public Voluntario updateVoluntario(Voluntario voluntario){
+        String query = "UPDATE Voluntario SET rut = :rut, nombres = :nombres, apellidos = :apellidos, fecha_nac = :fecha_nac," +
+                " disponibilidad = :disponibilidad, telefono = :telefono, rol = :rol, contrasena = :contrasena, region = :region," +
+                " longitud = :longitud, latitud = :latitud, geom = ST_PointFromText('POINT(' || :longitud || ' ' || :latitud || ')')" +
+                " WHERE id = :id_voluntario";
+        try( Connection connection = sql2o.open()) {
+            connection.createQuery(query)
+                    .addParameter("id_voluntario", voluntario.getId())
+                    .addParameter("rut", voluntario.getRut())
+                    .addParameter("nombres", voluntario.getNombres())
+                    .addParameter("apellidos", voluntario.getApellidos())
+                    .addParameter("fechaNacimiento", voluntario.getFechaNacimiento())
+                    .addParameter("disponibilidad", voluntario.getDisponibilidad())
+                    .addParameter("telefono", voluntario.getTelefono())
+                    .addParameter("rol", voluntario.getRol())
+                    .addParameter("contrasena", voluntario.getContrasena())
+                    .addParameter("region", voluntario.getRegion())
+                    .addParameter("longitud", voluntario.getLongitud())
+                    .addParameter("latitud", voluntario.getLatitud())
+                    .executeUpdate();
+            return voluntario;
+        }
+    }
+
+    @Override
+    public boolean deleteVoluntario(Integer id) {
+        String query = "DELETE FROM Voluntario WHERE id = :id";
+        try (Connection connection = sql2o.open()) {
+            connection.createQuery(query)
+                    .addParameter("id", id)
+                    .executeUpdate();
+            return true;
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            return false;
+        }
+    }
 }
