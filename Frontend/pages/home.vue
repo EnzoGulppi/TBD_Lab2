@@ -12,7 +12,7 @@
             <div class="col-md-6">
               <!-- <Emergencias Activas> -->
               <h3 class="text-center">Emergencias Activas</h3>
-              <table id="EmergenciasActivas" bgcolor:black>
+              <table id="EmergenciasActivas" >
                 <thead>
                     <!-- Encabezado de la tabla -->
                   <tr>
@@ -65,7 +65,7 @@
                         class="btn btn-info"
                         @click="detallesEmergencia(objeto)"
                       >
-                        Ver detalles 🔍
+                        Ver detalles
                       </button>
                     </td>
                   </tr>
@@ -106,7 +106,7 @@
             <div class="col-md-6">
               <!-- <Emergencias Finalizadas> -->
               <h3 class="text-center">Emergencias Finalizadas</h3>
-              <table id="EmergenciasFinalizadas" bgcolor:black>
+              <table id="EmergenciasFinalizadas">
                 <thead>
                   <tr>
                     <th>Id</th>
@@ -152,7 +152,7 @@
                         class="btn btn-info"
                         @click="detallesEmergencia(objeto)"
                       >
-                        Ver detalles 🔍
+                        Ver detalles
                       </button>
                     </td>
                   </tr>
