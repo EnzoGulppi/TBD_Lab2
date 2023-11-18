@@ -12,7 +12,8 @@
             <div class="col-md-6">
               <!-- <Emergencias Activas> -->
               <h3 class="text-center">Emergencias Activas</h3>
-              <table id="EmergenciasActivas" >
+              <table id="EmergenciasActivas" bgcolor:black>
+              
                 <thead>
                     <!-- Encabezado de la tabla -->
                   <tr>
@@ -106,7 +107,7 @@
             <div class="col-md-6">
               <!-- <Emergencias Finalizadas> -->
               <h3 class="text-center">Emergencias Finalizadas</h3>
-              <table id="EmergenciasFinalizadas">
+              <table id="EmergenciasFinalizadas" bgcolor:black>
                 <thead>
                   <tr>
                     <th>Id</th>
@@ -431,8 +432,8 @@ export default {
 }
 
 .map-container {
-  margin-left: 3vw;
-  margin-top: 2.5vw;
+  margin-left: 100px;
+  margin-top: 100px;
   height: 25vw; /* Ajusta la altura del contenedor del mapa según tus necesidades */
   width: 34vw;
   margin-bottom: 1px; /* Ajusta el espaciado inferior del contenedor del mapa según tus necesidades */
@@ -450,7 +451,7 @@ export default {
 }
 
 table {
-  margin: auto;
+  margin-left:20px;
   height: 23vw;
   border-collapse: collapse;
   width: 44vw;
@@ -458,7 +459,7 @@ table {
 }
 
 table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  background-color: #f4f4f4;
 }
 
 table + h2 {
@@ -469,11 +470,15 @@ h2 + table {
   margin-top: 5px;
 }
 
+table thead{
+  background-color: rgb(37, 174, 192);
+}
+
 table th,
 table td {
   padding: 5px;
-  background-color: rgba(30, 86, 101, 0.384);
   text-align: center;
+  
 }
 
 .home-page {
