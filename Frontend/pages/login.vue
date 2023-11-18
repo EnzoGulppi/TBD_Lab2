@@ -10,18 +10,30 @@
           <div class="col-lg-8" >
             <div class="card-body py-5 px-md-5">
               <h2 class="mb-4">INGRESA</h2>
-              <form>
-                <div class="form-outline mb-4">
-                  <input type="text" id="form2Example1" class="form-control" />
-                  <label class="form-label" for="form2Example1">RUT</label>
-                </div>
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <input type="password" id="form2Example2" class="form-control" />
-                  <label class="form-label" for="form2Example2">Contraseña</label>
-                </div>
-                <button type="button" class="btn btn-danger btn-block mb-4">INICIAR SESIÓN</button>
-              </form>
+              <form @submit.prevent="sumbit">
+            <div class="mb-3">
+              <label for="rut" class="form-label">Rut:</label>
+              <input
+                v-model="rut"
+                id="rut"
+                class="form-control"
+                type="text"
+                placeholder="12345678-9"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña:</label>
+              <input
+                v-model="password"
+                id="password"
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="Contraseña"
+              />
+            </div>
+            <button class="btn btn-primary" type="submit">INICIAR SESIÓN</button>
+          </form>
             </div>
           </div>
         </div>
