@@ -32,7 +32,7 @@
             </tr>
           </table>
           <button class="btn btn-success" @click="registrarse">
-            Registrarse 🫱🏻‍🫲🏻
+            Registrarse
           </button>
         </div>
         <!-- Voluntarios registrados -->
@@ -152,7 +152,7 @@
             </div> -->
           </div>
           <button class="btn btn-success" @click="enviarTarea">
-            Enviar Tarea 🎯
+            Enviar Tarea 
           </button>
         </form>
       </div>
@@ -354,14 +354,19 @@
 
   table th,
   table td {
+    border-color: black;
     padding: 5px;
-    background-color: rgba(30, 86, 101, 0.5);
+    background-color: rgb(176, 220, 226, 0.5);
     text-align: center;
   }
 
   form .container {
-    background-color: rgba(30, 86, 101, 0.5);
+    background-color: rgb(176, 220, 226 ,0.5);
     border-radius: 30px 30px;
+  }
+
+  .h1{
+    
   }
 
   form .container #mapaRegistro {
