@@ -16,7 +16,7 @@ public class TareaRepositoryImp implements TareaRepository{
     @Override
     public List<Tarea> findAll() {
         List<Tarea> tareas;
-        String query = "SELECT * FROM Tarea";
+        String query = "SELECT * FROM tarea";
         try (Connection connection = sql2o.open()) {
             tareas = connection.createQuery(query)
                     .executeAndFetch(Tarea.class);
@@ -30,7 +30,7 @@ public class TareaRepositoryImp implements TareaRepository{
     @Override
     public Tarea findById(Integer id) {
         Tarea tarea;
-        String query = "SELECT * FROM Tarea WHERE id_tarea = :id_tarea";
+        String query = "SELECT * FROM tarea WHERE id_tarea = :id_tarea";
         try (Connection connection = sql2o.open()) {
             tarea = connection.createQuery(query)
                     .addParameter("id_tarea", id)
@@ -45,7 +45,7 @@ public class TareaRepositoryImp implements TareaRepository{
     @Override
     public List<Tarea> findByNombre(String nombre) {
         List<Tarea> tareas;
-        String query = "SELECT * FROM Tarea WHERE nombre = :nombre";
+        String query = "SELECT * FROM tarea WHERE nombre = :nombre";
         try (Connection connection = sql2o.open()) {
             tareas = connection.createQuery(query)
                     .addParameter("nombre", nombre)
@@ -60,7 +60,7 @@ public class TareaRepositoryImp implements TareaRepository{
     @Override
     public List<Tarea> findByEmergencia(Integer id_emergencia) {
         List<Tarea> tareas;
-        String query = "SELECT * FROM Tarea WHERE id_emergencia = :id_emergencia";
+        String query = "SELECT * FROM tarea WHERE id_emergencia = :id_emergencia";
         try (Connection connection = sql2o.open()) {
             tareas = connection.createQuery(query)
                     .addParameter("id_emergencia", id_emergencia)
@@ -75,7 +75,7 @@ public class TareaRepositoryImp implements TareaRepository{
     @Override
     public List<Tarea> findByRegion(String region) {
         List<Tarea> tareas;
-        String query = "SELECT * FROM Tarea WHERE region = :region";
+        String query = "SELECT * FROM tarea WHERE region = :region";
         try (Connection connection = sql2o.open()) {
             tareas = connection.createQuery(query)
                     .addParameter("region", region)
@@ -89,7 +89,7 @@ public class TareaRepositoryImp implements TareaRepository{
 
     @Override
     public Tarea save(Tarea tarea) {
-        String query = "INSERT INTO Tarea (nombre, descripcion, region, longitud, latitud, geom, id_estado, id_emergencia) " +
+        String query = "INSERT INTO tarea (nombre, descripcion, region, longitud, latitud, geom, id_estado, id_emergencia) " +
                 "VALUES (:nombre, :descripcion, :region, :longitud, :latitud, ST_PointFromText('POINT(' || :longitud || ' ' || :latitud || ')'), :id_estado, :id_emergencia)";
         try (Connection connection = sql2o.open()) {
             Integer id = connection.createQuery(query, true)
@@ -111,7 +111,7 @@ public class TareaRepositoryImp implements TareaRepository{
 
     @Override
     public Tarea update(Tarea tarea) {
-        String query = "UPDATE Tarea SET nombre = :nombre, descripcion = :descripcion, region = :region," +
+        String query = "UPDATE tarea SET nombre = :nombre, descripcion = :descripcion, region = :region," +
                 " longitud = :longitud, latitud = :latitud, " +
                 "geom = ST_PointFromText('POINT(' || :longitud || ' ' || :latitud || ')'), id_estado = :id_estado," +
                 " id_emergencia = :id_emergencia WHERE id_tarea = :id_tarea";
@@ -135,7 +135,7 @@ public class TareaRepositoryImp implements TareaRepository{
 
     @Override
     public boolean deleteTarea(Integer id) {
-        String query = "DELETE FROM Tarea WHERE id_tarea = :id_tarea";
+        String query = "DELETE FROM tarea WHERE id_tarea = :id_tarea";
         try (Connection connection = sql2o.open()) {
             connection.createQuery(query)
                     .addParameter("id_tarea", id)

@@ -17,7 +17,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     @Override
     public List<Voluntario> findAllVoluntario(){
         List<Voluntario> salida;
-        String query = "SELECT * FROM Voluntario";
+        String query = "SELECT * FROM voluntario";
         try(Connection connection = sql2o.open()){
             salida = connection.createQuery(query).executeAndFetch(Voluntario.class);
             return salida;
@@ -30,7 +30,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     @Override
     public Voluntario findVoluntarioById(Integer id){
         Voluntario salida;
-        String query = "SELECT * FROM Voluntario WHERE id = :id";
+        String query = "SELECT * FROM voluntario WHERE id = :id";
         try(Connection connection = sql2o.open()){
             salida = connection.createQuery(query)
                     .addParameter("id", id)
@@ -45,7 +45,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     @Override
     public Voluntario findVoluntarioByRut(String rut){
         Voluntario salida;
-        String query = "SELECT * FROM Voluntario WHERE rut = :rut";
+        String query = "SELECT * FROM voluntario WHERE rut = :rut";
         try(Connection connection = sql2o.open()){
             salida = connection.createQuery(query)
                     .addParameter("rut", rut)
@@ -102,14 +102,14 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
 
     @Override
     public Voluntario saveVoluntario(Voluntario voluntario){
-        String query = "INSERT INTO Voluntario (rut, nombres, apellidos, fecha_nac, disponibilidad, telefono, rol, contrasena, region, longitud, latitud, geom) " +
+        String query = "INSERT INTO voluntario (rut, nombres, apellidos, fecha_nac, disponibilidad, telefono, rol, contrasena, region, longitud, latitud, geom) " +
                 "VALUES (:rut, :nombres, :apellidos, :fecha_nac, :disponibilidad, :telefono, :rol, :contrasena, :region, :longitud, :latitud, ST_PointFromText('POINT(' || :longitud || ' ' || :latitud || ')'))";
         try( Connection connection = sql2o.open()) {
             connection.createQuery(query)
                     .addParameter("rut", voluntario.getRut())
                     .addParameter("nombres", voluntario.getNombres())
                     .addParameter("apellidos", voluntario.getApellidos())
-                    .addParameter("fechaNacimiento", voluntario.getFechaNacimiento())
+                    .addParameter("fechaNacimiento", voluntario.getFecha_nac())
                     .addParameter("disponibilidad", voluntario.getDisponibilidad())
                     .addParameter("telefono", voluntario.getTelefono())
                     .addParameter("rol", voluntario.getRol())
@@ -124,7 +124,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
 
     @Override
     public Voluntario updateVoluntario(Voluntario voluntario){
-        String query = "UPDATE Voluntario SET rut = :rut, nombres = :nombres, apellidos = :apellidos, fecha_nac = :fecha_nac," +
+        String query = "UPDATE voluntario SET rut = :rut, nombres = :nombres, apellidos = :apellidos, fecha_nac = :fecha_nac," +
                 " disponibilidad = :disponibilidad, telefono = :telefono, rol = :rol, contrasena = :contrasena, region = :region," +
                 " longitud = :longitud, latitud = :latitud, geom = ST_PointFromText('POINT(' || :longitud || ' ' || :latitud || ')')" +
                 " WHERE id = :id_voluntario";
@@ -134,7 +134,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
                     .addParameter("rut", voluntario.getRut())
                     .addParameter("nombres", voluntario.getNombres())
                     .addParameter("apellidos", voluntario.getApellidos())
-                    .addParameter("fechaNacimiento", voluntario.getFechaNacimiento())
+                    .addParameter("fechaNacimiento", voluntario.getFecha_nac())
                     .addParameter("disponibilidad", voluntario.getDisponibilidad())
                     .addParameter("telefono", voluntario.getTelefono())
                     .addParameter("rol", voluntario.getRol())
@@ -149,7 +149,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
 
     @Override
     public boolean deleteVoluntario(Integer id) {
-        String query = "DELETE FROM Voluntario WHERE id = :id";
+        String query = "DELETE FROM voluntario WHERE id = :id";
         try (Connection connection = sql2o.open()) {
             connection.createQuery(query)
                     .addParameter("id", id)

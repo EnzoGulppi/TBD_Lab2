@@ -16,7 +16,7 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
     @Override
     public List<Institucion> findAllInstitucion() {
         List<Institucion> instituciones;
-        String query = "SELECT * FROM Institucion";
+        String query = "SELECT * FROM institucion";
         try (Connection connection = sql2o.open()) {
             instituciones = connection.createQuery(query)
                     .executeAndFetch(Institucion.class);
@@ -30,7 +30,7 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
     @Override
     public Institucion findByIdInstitucion(Integer id) {
         Institucion institucion;
-        String query = "SELECT * FROM Institucion WHERE id_institucion = :id_institucion";
+        String query = "SELECT * FROM institucion WHERE id_institucion = :id_institucion";
         try (Connection connection = sql2o.open()) {
             institucion = connection.createQuery(query)
                     .addParameter("id_institucion", id)
