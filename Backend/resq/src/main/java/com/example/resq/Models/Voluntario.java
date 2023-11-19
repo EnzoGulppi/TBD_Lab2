@@ -10,7 +10,7 @@ public class Voluntario {
     private String rut;
     private String nombres;
     private String apellidos;
-    private Date fechaNacimiento;
+    private Date fecha_nac;
     private String disponibilidad;
     private String telefono;
     private String rol;
@@ -21,7 +21,7 @@ public class Voluntario {
     private Double longitud;
 
     //Contructor
-    public Voluntario(Integer id, String rut, String nombres, String apellidos, Date fechaNacimiento,
+    public Voluntario(Integer id, String rut, String nombres, String apellidos, Date fecha_nac,
                       String disponibilidad, String telefono, String rol,
                       String contrasena, String region, String geom,
                       Double latitud, Double longitud) {
@@ -29,7 +29,7 @@ public class Voluntario {
         this.rut = rut;
         this.nombres = nombres;
         this.apellidos = apellidos;
-        this.fechaNacimiento = fechaNacimiento;
+        this.fecha_nac = fecha_nac;
         this.disponibilidad = disponibilidad;
         this.telefono = telefono;
         this.rol = rol;
@@ -58,8 +58,8 @@ public class Voluntario {
         return apellidos;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
+    public Date getFecha_nac() {
+        return fecha_nac;
     }
 
     public String getDisponibilidad() {
@@ -111,8 +111,8 @@ public class Voluntario {
         this.apellidos = apellidos;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setFecha_nac(Date fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
 
     public void setDisponibilidad(String disponibilidad) {
