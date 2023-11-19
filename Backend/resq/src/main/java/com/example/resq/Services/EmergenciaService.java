@@ -16,27 +16,23 @@ public class EmergenciaService {
     private EmergenciaRepository emergenciaRepository;
 
     @GetMapping
-    public List<Emergencia> getAllEmergencias(){
-        return emergenciaRepository.getAllEmergencias();
+    public List<Emergencia> getAllEmergencias() {
+        List<Emergencia> salida = emergenciaRepository.getAllEmergencias();
+        return salida;
     }
 
     @GetMapping("/{id}")
-    public Emergencia  getEmergenciaById(@PathVariable Integer id){
+    public Emergencia getEmergenciaById(@PathVariable Integer id) {
         return emergenciaRepository.getEmergenciaById(id);
     }
 
     @GetMapping("/estado/{estado}")
-    public List<Emergencia> getEmergenciaByEstado(@PathVariable("estado") String estado){
+    public List<Emergencia> getEmergenciaByEstado(@PathVariable String estado) {
         return emergenciaRepository.getEmergenciasByEstado(estado);
     }
 
-    @GetMapping("region/{region}")
-    public List<Emergencia> getEmergenciasByRegion(@PathVariable("region") String region){
-        return emergenciaRepository.getEmergenciasByRegion(region);
-    }
-
     @PostMapping
-    public void saveEmergencia(@RequestBody Map<String, Object> json){
+    public void saveEmergencia(@RequestBody Map<String, Object> json) {
         String nombre = (String) json.get("nombre");
         String gravedad = (String) json.get("gravedad");
         String fecha = (String) json.get("fecha");
@@ -54,13 +50,16 @@ public class EmergenciaService {
         System.out.println("Longitud: " + longitud);
         System.out.println("Latitud: " + latitud);
 
+        // Buscar id de la institucion
+
+        //Integer idInstitucion = institucionService.getByName(institucion).getIdInstitucion();
         Integer idInstitucion = 1;
 
         Emergencia salida = new Emergencia();
         salida.setNombre(nombre);
         salida.setGravedad(gravedad);
         salida.setFecha(fecha);
-        salida.setId_institucion(idInstitucion);
+        salida.setIdInstitucion(idInstitucion);
         salida.setEstado(estado);
         salida.setRegion(region);
         salida.setLongitud(longitud);
@@ -69,7 +68,7 @@ public class EmergenciaService {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteEmergencia(@PathVariable Integer id){
+    public void deleteEmergencia(@PathVariable Integer id) {
         emergenciaRepository.deleteEmergencia(id);
     }
 }

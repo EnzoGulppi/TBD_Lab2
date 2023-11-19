@@ -10,110 +10,88 @@ public class Emergencia {
     private String fecha;
     private String estado;
     private String region;
-    private String geom;
-    private Double latitud;
     private Double longitud;
+    private Double latitud;
+    private String geom;
     private Integer id_institucion;
 
-
-    //Constructor
-
-    /*public Emergencia(Integer id_emergencia, String nombre, String gravedad, String fecha, String estado,
-                      String region, String geom, Double latitud, Double longitud, Integer id_institucion) {
-        this.id_emergencia = id_emergencia;
-        this.nombre = nombre;
-        this.gravedad = gravedad;
-        this.fecha = fecha;
-        this.estado = estado;
-        this.region = region;
-        this.geom = geom;
-        this.latitud = latitud;
-        this.longitud = longitud;
-        this.id_institucion = id_institucion;
-    }*/
-
-    //Getter y Setter
-    //Getter
-
-    public Integer getId_emergencia() {
+    public Integer getIdEmergencia() {
         return id_emergencia;
+    }
+
+    public void setIdEmergencia(Integer idEmergencia) {
+        this.id_emergencia = idEmergencia;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getGravedad() {
-        return gravedad;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public String getGeom() {
-        return geom;
-    }
-
-    public Double getLatitud() {
-        return latitud;
-    }
-
-    public Double getLongitud() {
-        return longitud;
-    }
-
-    public Integer getId_institucion() {
-        return id_institucion;
-    }
-
-    //Setter
-
-    public void setId_emergencia(Integer id_emergencia) {
-        this.id_emergencia = id_emergencia;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getGravedad() {
+        return gravedad;
     }
 
     public void setGravedad(String gravedad) {
         this.gravedad = gravedad;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public String getEstado() {
+        return estado;
     }
 
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
+    public String getRegion() {
+        return region;
+    }
+
     public void setRegion(String region) {
         this.region = region;
     }
 
-    public void setGeom(String geom) {
-        this.geom = geom;
-    }
-
-    public void setLatitud(Double latitud) {
-        this.latitud = latitud;
+    public Double getLongitud() {
+        return longitud;
     }
 
     public void setLongitud(Double longitud) {
         this.longitud = longitud;
     }
 
-    public void setId_institucion(Integer id_institucion) {
-        this.id_institucion = id_institucion;
+    public Double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(Double latitud) {
+        this.latitud = latitud;
+    }
+
+    public String getGeom() {
+        return geom;
+    }
+
+    public void setGeom(String geom) {
+        this.geom = geom;
+    }
+
+    public Integer getIdInstitucion() {
+        return id_institucion;
+    }
+
+    public void setIdInstitucion(Integer idInstitucion) {
+        this.id_institucion = idInstitucion;
     }
 }

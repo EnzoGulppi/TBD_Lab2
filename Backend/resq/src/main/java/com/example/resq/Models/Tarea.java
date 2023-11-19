@@ -1,6 +1,7 @@
 package com.example.resq.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.core.SpringVersion;
 
 public class Tarea {
     @JsonProperty("id_tarea")
@@ -10,6 +11,8 @@ public class Tarea {
     private String region;
     private Double latitud;
     private Double longitud;
+
+    private String geom;
 
     //FK
     private Integer id_estado;
