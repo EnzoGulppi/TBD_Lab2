@@ -23,7 +23,7 @@ public class VoluntarioEmergencia {
         return id_voluntario_emergencia;
     }
 
-    public void setId_voluntario_emergencia(Integer id_voluntario_emergencia) {
+    public void setIdVoluntarioEmergencia(Integer id_voluntario_emergencia) {
         this.id_voluntario_emergencia = id_voluntario_emergencia;
     }
 
