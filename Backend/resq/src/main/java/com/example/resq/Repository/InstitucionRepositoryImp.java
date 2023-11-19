@@ -26,7 +26,7 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
                     .executeAndFetch(Institucion.class);
             return instituciones;
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         return null;
     }
