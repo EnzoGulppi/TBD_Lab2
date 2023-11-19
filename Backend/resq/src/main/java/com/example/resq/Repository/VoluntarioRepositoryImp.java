@@ -134,7 +134,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
                     .addParameter("rut", voluntario.getRut())
                     .addParameter("nombres", voluntario.getNombres())
                     .addParameter("apellidos", voluntario.getApellidos())
-                    .addParameter("fechaNacimiento", voluntario.getFechaNacimiento())
+                    .addParameter("fechaNacimiento", voluntario.getFecha_nac())
                     .addParameter("disponibilidad", voluntario.getDisponibilidad())
                     .addParameter("telefono", voluntario.getTelefono())
                     .addParameter("rol", voluntario.getRol())
