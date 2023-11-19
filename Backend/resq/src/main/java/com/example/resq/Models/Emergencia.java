@@ -13,13 +13,13 @@ public class Emergencia {
     private String geom;
     private Double latitud;
     private Double longitud;
-    private String id_institucion;
+    private Integer id_institucion;
 
 
     //Constructor
 
-    public Emergencia(Integer id_emergencia, String nombre, String gravedad, String fecha, String estado,
-                      String region, String geom, Double latitud, Double longitud, String id_institucion) {
+    /*public Emergencia(Integer id_emergencia, String nombre, String gravedad, String fecha, String estado,
+                      String region, String geom, Double latitud, Double longitud, Integer id_institucion) {
         this.id_emergencia = id_emergencia;
         this.nombre = nombre;
         this.gravedad = gravedad;
@@ -30,7 +30,7 @@ public class Emergencia {
         this.latitud = latitud;
         this.longitud = longitud;
         this.id_institucion = id_institucion;
-    }
+    }*/
 
     //Getter y Setter
     //Getter
@@ -71,7 +71,7 @@ public class Emergencia {
         return longitud;
     }
 
-    public String getId_institucion() {
+    public Integer getId_institucion() {
         return id_institucion;
     }
 
@@ -113,7 +113,7 @@ public class Emergencia {
         this.longitud = longitud;
     }
 
-    public void setId_institucion(String id_institucion) {
+    public void setId_institucion(Integer id_institucion) {
         this.id_institucion = id_institucion;
     }
 }

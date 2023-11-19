@@ -3,6 +3,7 @@ package com.example.resq.Services;
 import com.example.resq.Models.Emergencia;
 import com.example.resq.Models.EmergenciaHabilidad;
 import com.example.resq.Repository.EmergenciaHabilidadRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,49 +11,25 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/emergencia-habilidades")
 public class EmergenciaHabilidadService {
-    private final EmergenciaHabilidadRepository emergenciaHabilidadRepository;
-
-    EmergenciaHabilidadService(EmergenciaHabilidadRepository emergenciaHabilidadRepository){
-        this.emergenciaHabilidadRepository = emergenciaHabilidadRepository;
-    }
+    @Autowired
+    EmergenciaHabilidadRepository emergenciaHabilidadRepository;
 
     @GetMapping
     public List<EmergenciaHabilidad> getAllEmergenciaHabilidad(){return emergenciaHabilidadRepository.findAll();}
 
     @GetMapping("/{id}")
-    public EmergenciaHabilidad findById(@PathVariable("id") String id_str){
-        Integer id;
-        try {
-            id = Integer.parseInt(id_str);
-            return emergenciaHabilidadRepository.findById(id);
-        }catch (Exception e){
-            System.out.println("Ingrese un id válido");
-            return null;
-        }
+    public EmergenciaHabilidad findById(@PathVariable("id") Integer id){
+        return emergenciaHabilidadRepository.findById(id);
     }
 
     @GetMapping("/emergencia/{id}")
-    public List<EmergenciaHabilidad> findByEmergencia(@PathVariable("id") String id_str){
-        Integer id;
-        try {
-            id = Integer.parseInt(id_str);
-            return emergenciaHabilidadRepository.findByEmergencia(id);
-        }catch (Exception e){
-            System.out.println("Ingrese un id válido.");
-            return null;
-        }
+    public List<EmergenciaHabilidad> findByEmergencia(@PathVariable("id") Integer id){
+        return emergenciaHabilidadRepository.findByEmergencia(id);
     }
 
     @GetMapping("/habilidad/{id}")
-    public List<EmergenciaHabilidad> findByHabilidad(@PathVariable("id") String id_str){
-        Integer id;
-        try {
-            id = Integer.parseInt(id_str);
-            return emergenciaHabilidadRepository.findByHabilidad(id);
-        }catch (Exception e){
-            System.out.println("Ingrese un id válido");
-            return null;
-        }
+    public List<EmergenciaHabilidad> findByHabilidad(@PathVariable("id") Integer id){
+        return emergenciaHabilidadRepository.findByHabilidad(id);
     }
 
     @PostMapping
@@ -66,17 +43,7 @@ public class EmergenciaHabilidadService {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteEmergenciaHabilidad(@PathVariable("id") String id_str){
-        Integer id;
-        try {
-            id = Integer.parseInt(id_str);
-            if (emergenciaHabilidadRepository.delete(id)){
-                System.out.println("Tupla eliminada con éxito");
-            }else {
-                System.out.println("La tupla no fue eliminada");
-            }
-        }catch (Exception e){
-            System.out.println("Ingrese un id válido");
-        }
+    public void deleteEmergenciaHabilidad(@PathVariable("id") Integer id){
+        emergenciaHabilidadRepository.delete(id);
     }
 }
