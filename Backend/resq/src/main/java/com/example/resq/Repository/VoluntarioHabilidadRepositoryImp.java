@@ -1,11 +1,14 @@
 package com.example.resq.Repository;
 
 import com.example.resq.Models.VoluntarioHabilidad;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RestController;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
 import java.util.List;
 
+@Repository
 public class VoluntarioHabilidadRepositoryImp implements VoluntarioHabilidadRepository{
     private final Sql2o sql2o;
 

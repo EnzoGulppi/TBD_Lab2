@@ -224,6 +224,7 @@
           longitud: this.selectedCoordinates.lng,
           region: this.region
         }
+
         // Enviar emergencia
         try {
           const response = await axios.post(
@@ -231,7 +232,7 @@
             emergencia
           )
           console.log(response)
-          var idEmergencia = resonse.data.id
+          var idEmergencia = response.data.id
         } catch (error) {
           console.log(error)
         }
