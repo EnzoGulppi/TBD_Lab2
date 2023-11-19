@@ -21,7 +21,7 @@ public class EmergenciaService {
     }
 
     @GetMapping("/{id}")
-    public Emergencia  getEmergenciaById(@PathVariable("id") Integer id){
+    public Emergencia  getEmergenciaById(@PathVariable Integer id){
         return emergenciaRepository.getEmergenciaById(id);
     }
 

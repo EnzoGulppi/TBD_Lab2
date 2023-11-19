@@ -34,10 +34,10 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
     @Override
     public Institucion findByIdInstitucion(Integer id) {
         Institucion institucion;
-        String query = "SELECT * FROM institucion WHERE id_institucion = :id_institucion";
+        String query = "SELECT * FROM institucion WHERE id_institucion = :id";
         try (Connection connection = sql2o.open()) {
             institucion = connection.createQuery(query)
-                    .addParameter("id_institucion", id)
+                    .addParameter("id", id)
                     .executeAndFetchFirst(Institucion.class);
             return institucion;
         } catch (Exception e) {
@@ -63,11 +63,11 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
 
     @Override
     public Institucion updateInstitucion(Institucion institucion) {
-        String query = "UPDATE institucion SET nombre = :nombre WHERE id_institucion = :id_institucion";
+        String query = "UPDATE institucion SET nombre = :nombre WHERE id_institucion = :id";
         try (Connection connection = sql2o.open()) {
             Integer id = connection.createQuery(query, true)
                     .addParameter("nombre", institucion.getNombre())
-                    .addParameter("id_institucion", institucion.getId_Institucion())
+                    .addParameter("id", institucion.getId_Institucion())
                     .executeUpdate().getKey(Integer.class);
             institucion.setId_Institucion(id);
             return institucion;
@@ -79,10 +79,10 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
 
     @Override
     public void deleteInstitucion(Integer id) {
-        String query = "DELETE FROM institucion WHERE id_institucion = :id_institucion";
+        String query = "DELETE FROM institucion WHERE id_institucion = :id";
         try (Connection connection = sql2o.open()) {
             connection.createQuery(query)
-                    .addParameter("id_institucion", id)
+                    .addParameter("id", id)
                     .executeUpdate();
         } catch (Exception e) {
             System.out.println(e);
