@@ -21,7 +21,7 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
     public List<Institucion> findAllInstitucion() {
         List<Institucion> instituciones;
         String query = "SELECT * FROM institucion";
-        try (Connection connection = sql2o.open()) {
+        try (org.sql2o.Connection connection = sql2o.open()) {
             instituciones = connection.createQuery(query)
                     .executeAndFetch(Institucion.class);
             return instituciones;
@@ -35,7 +35,7 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
     public Institucion findByIdInstitucion(Integer id) {
         Institucion institucion;
         String query = "SELECT * FROM institucion WHERE id_institucion = :id";
-        try (Connection connection = sql2o.open()) {
+        try (org.sql2o.Connection connection = sql2o.open()) {
             institucion = connection.createQuery(query)
                     .addParameter("id", id)
                     .executeAndFetchFirst(Institucion.class);
@@ -49,7 +49,7 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
     @Override
     public Institucion saveInstitucion(Institucion institucion) {
         String query = "INSERT INTO institucion (nombre) VALUES (:nombre)";
-        try (Connection connection = sql2o.open()) {
+        try (org.sql2o.Connection connection = sql2o.open()) {
             Integer id = connection.createQuery(query, true)
                     .addParameter("nombre", institucion.getNombre())
                     .executeUpdate().getKey(Integer.class);
@@ -64,7 +64,7 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
     @Override
     public Institucion updateInstitucion(Institucion institucion) {
         String query = "UPDATE institucion SET nombre = :nombre WHERE id_institucion = :id";
-        try (Connection connection = sql2o.open()) {
+        try (org.sql2o.Connection connection = sql2o.open()) {
             Integer id = connection.createQuery(query, true)
                     .addParameter("nombre", institucion.getNombre())
                     .addParameter("id", institucion.getId_Institucion())
@@ -80,7 +80,7 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
     @Override
     public void deleteInstitucion(Integer id) {
         String query = "DELETE FROM institucion WHERE id_institucion = :id";
-        try (Connection connection = sql2o.open()) {
+        try (org.sql2o.Connection connection = sql2o.open()) {
             connection.createQuery(query)
                     .addParameter("id", id)
                     .executeUpdate();
