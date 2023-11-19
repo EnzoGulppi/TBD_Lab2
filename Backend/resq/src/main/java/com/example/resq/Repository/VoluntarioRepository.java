@@ -10,7 +10,7 @@ public interface VoluntarioRepository {
     public Voluntario findVoluntarioByRut(String rut);
     public List<Voluntario> traerVoluntariosCercanos(Integer id_emergencia, Integer limite);
     public List<Voluntario> getVoluntariosByEmergencia(Integer id_emergencia);
-    public void saveVoluntario(Voluntario voluntario);
+    public Voluntario saveVoluntario(Voluntario voluntario);
     public Voluntario updateVoluntario(Voluntario voluntario);
     public boolean deleteVoluntario(Integer id);
 }

@@ -101,7 +101,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     }
 
     @Override
-    public void saveVoluntario(Voluntario voluntario){
+    public Voluntario saveVoluntario(Voluntario voluntario){
         String query = "INSERT INTO Voluntario (rut, nombres, apellidos, fecha_nac, disponibilidad, telefono, rol, contrasena, region, longitud, latitud, geom) " +
                 "VALUES (:rut, :nombres, :apellidos, :fecha_nac, :disponibilidad, :telefono, :rol, :contrasena, :region, :longitud, :latitud, ST_PointFromText('POINT(' || :longitud || ' ' || :latitud || ')'))";
         try( Connection connection = sql2o.open()) {
@@ -119,6 +119,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
                     .addParameter("latitud", voluntario.getLatitud())
                     .executeUpdate();
         }
+        return voluntario;
     }
 
     @Override
