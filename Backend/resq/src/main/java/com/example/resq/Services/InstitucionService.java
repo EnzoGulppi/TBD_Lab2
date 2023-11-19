@@ -12,15 +12,25 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/instituciones")
 public class InstitucionService {
-    @Autowired
-    InstitucionRepository institucionRepository;
+    private final InstitucionRepository institucionRepository;
+
+    InstitucionService(InstitucionRepository institucionRepository){
+        this.institucionRepository = institucionRepository;
+    }
     @GetMapping
     public List<Institucion> getAllInstitucion(){
         return institucionRepository.findAllInstitucion();
     }
     @GetMapping("/{id}")
-    public Institucion findById(@PathVariable("id") Integer id){
-        return institucionRepository.findByIdInstitucion(id);
+    public Institucion findById(@PathVariable("id") String id_str){
+        Integer id;
+        try{
+            id = Integer.parseInt(id_str);
+            return institucionRepository.findByIdInstitucion(id);
+        }catch(Exception e){
+            System.out.println("Ingrese un id valido");
+            return null;
+        }
     }
     @PostMapping
     @ResponseBody
@@ -28,8 +38,14 @@ public class InstitucionService {
         return institucionRepository.saveInstitucion(institucion);
     }
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id){
-        institucionRepository.deleteInstitucion(id);
+    public void delete(@PathVariable("id") String id_str){
+        int id;
+        try{
+            id = Integer.parseInt(id_str);
+            institucionRepository.deleteInstitucion(id);
+        }catch(Exception e){
+            System.out.println("Ingrese un id valido");
+        }
     }
     @PutMapping
     @ResponseBody

@@ -13,6 +13,10 @@ public class InstitucionRepositoryImp implements InstitucionRepository{
     @Autowired
     private Sql2o sql2o;
 
+    @Autowired
+    public InstitucionRepositoryImp(Sql2o sql2o) {
+        this.sql2o = sql2o;
+    }
     @Override
     public List<Institucion> findAllInstitucion() {
         List<Institucion> instituciones;
