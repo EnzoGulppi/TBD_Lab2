@@ -2,6 +2,10 @@ package com.example.resq.Repository;
 
 import com.example.resq.Models.VoluntarioHabilidad;
 import org.springframework.stereotype.Repository;
+<<<<<<< HEAD
+import org.springframework.web.bind.annotation.RestController;
+=======
+>>>>>>> 9539e89e4567a0a21594d448ffa101194425e967
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
