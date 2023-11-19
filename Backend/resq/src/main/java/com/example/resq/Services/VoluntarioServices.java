@@ -94,7 +94,7 @@ public class VoluntarioServices {
         }
     }
 
-    @DeleteMapping("/{id]")
+    @DeleteMapping("/{id}")
     public boolean deleteVoluntario(@PathVariable Integer id){
         return  voluntarioRepository.deleteVoluntario(id);
     }
