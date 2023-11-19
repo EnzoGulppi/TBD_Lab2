@@ -30,6 +30,11 @@ public class EmergenciaService {
         return emergenciaRepository.getEmergenciasByEstado(estado);
     }
 
+    @GetMapping("region/{region}")
+    public List<Emergencia> getEmergenciasByRegion(@PathVariable("region") String region){
+        return emergenciaRepository.getEmergenciasByRegion(region);
+    }
+
     @PostMapping
     public void saveEmergencia(@RequestBody Map<String, Object> json){
         String nombre = (String) json.get("nombre");

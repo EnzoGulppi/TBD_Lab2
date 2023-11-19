@@ -10,4 +10,6 @@ public interface EmergenciaRepository {
     public void saveEmergencia(Emergencia emergencia);
     public void deleteEmergencia(Integer id);
     public List<Emergencia> getEmergenciasByEstado(String estado);
+
+    public List<Emergencia> getEmergenciasByRegion(String region);
 }
