@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/emergencias")
@@ -30,8 +31,36 @@ public class EmergenciaService {
     }
 
     @PostMapping
-    public void saveEmergencia(@RequestBody Emergencia emergencia){
-        emergenciaRepository.saveEmergencia(emergencia);
+    public void saveEmergencia(@RequestBody Map<String, Object> json){
+        String nombre = (String) json.get("nombre");
+        String gravedad = (String) json.get("gravedad");
+        String fecha = (String) json.get("fecha");
+        String institucion = (String) json.get("institucion");
+        String estado = (String) json.get("estado");
+        String region = (String) json.get("region");
+        Double longitud = (Double) json.get("longitud");
+        Double latitud = (Double) json.get("latitud");
+
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Gravedad: " + gravedad);
+        System.out.println("Fecha: " + fecha.toString());
+        System.out.println("Institucion: " + institucion);
+        System.out.println("Region: " + region);
+        System.out.println("Longitud: " + longitud);
+        System.out.println("Latitud: " + latitud);
+
+        Integer idInstitucion = 1;
+
+        Emergencia salida = new Emergencia();
+        salida.setNombre(nombre);
+        salida.setGravedad(gravedad);
+        salida.setFecha(fecha);
+        salida.setId_institucion(idInstitucion);
+        salida.setEstado(estado);
+        salida.setRegion(region);
+        salida.setLongitud(longitud);
+        salida.setLatitud(latitud);
+        emergenciaRepository.saveEmergencia(salida);
     }
 
     @DeleteMapping("/{id}")

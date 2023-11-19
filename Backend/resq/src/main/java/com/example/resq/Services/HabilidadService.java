@@ -10,28 +10,30 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/habilidad")
-public class HabilidadServices {
+@RequestMapping("/api/habilidades")
+public class HabilidadService {
     @Autowired
     HabilidadRepository habilidadRepository;
     @GetMapping
-    public List<Habilidad> findAllHabilidades(){
+    public List<Habilidad> getAllHabilidad(){
         return habilidadRepository.findAll();
     }
     @GetMapping("/{id}")
-    public Habilidad findByIdHabilidad(@PathVariable("id") Integer id){
+    public Habilidad findById(@PathVariable("id") Integer id){
         return habilidadRepository.findById(id);
     }
     @PostMapping
-    public Habilidad saveHabilidad(@RequestBody Habilidad habilidad){
+    @ResponseBody
+    public Habilidad save(@RequestBody Habilidad habilidad){
         return habilidadRepository.save(habilidad);
     }
     @DeleteMapping("/{id}")
-    public void deleteHabilidad(@PathVariable("id") Integer id){
+    public void delete(@PathVariable("id") Integer id){
         habilidadRepository.delete(id);
     }
     @PutMapping
-    public Habilidad updateHabilidad(@RequestBody Habilidad habilidad){
+    @ResponseBody
+    public Habilidad update(@RequestBody Habilidad habilidad){
         return habilidadRepository.update(habilidad);
     }
 }

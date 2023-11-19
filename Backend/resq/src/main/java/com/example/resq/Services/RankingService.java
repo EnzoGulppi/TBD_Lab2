@@ -10,24 +10,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/ranking")
-public class RankingServices {
+@RequestMapping("/api/rankings")
+public class RankingService {
     @Autowired
     RankingRepository rankingRepository;
     @GetMapping
-    public List<Ranking> findAllRankings(){
+    public List<Ranking> getAllRankings(){
         return rankingRepository.findAll();
     }
     @GetMapping("/{id}")
-    public Ranking findByIdRanking(@PathVariable("id") Integer id){
+    public Ranking findById(@PathVariable("id") Integer id){
         return rankingRepository.findById(id);
     }
     @GetMapping("/voluntario/{id}")
-    public List<Ranking> findByVoluntarioRanking(@PathVariable("id") Integer id){
+    public List<Ranking> findByVoluntario(@PathVariable("id") Integer id){
         return rankingRepository.findByVoluntario(id);
     }
     @GetMapping("/tarea/{id}")
-    public List<Ranking> findByTareaRanking(@PathVariable("id") Integer id){
+    public List<Ranking> findByTarea(@PathVariable("id") Integer id){
         return rankingRepository.findByTarea(id);
     }
     @PostMapping

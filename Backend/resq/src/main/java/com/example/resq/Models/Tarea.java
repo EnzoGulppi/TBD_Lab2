@@ -20,7 +20,7 @@ public class Tarea {
     //Constructor
 
 
-    public Tarea(Integer id_tarea, String nombre, String descripcion,
+    /*public Tarea(Integer id_tarea, String nombre, String descripcion,
                  String region, Double latitud, Double longitud,
                  Integer id_estado, Integer id_emergencia) {
         this.id_tarea = id_tarea;
@@ -31,7 +31,7 @@ public class Tarea {
         this.longitud = longitud;
         this.id_estado = id_estado;
         this.id_emergencia = id_emergencia;
-    }
+    }*/
 
     //Getter y Setter
     public Integer getId_tarea() {
