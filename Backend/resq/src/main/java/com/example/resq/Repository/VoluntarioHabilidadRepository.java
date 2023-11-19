@@ -1,9 +1,11 @@
 package com.example.resq.Repository;
 
 import com.example.resq.Models.VoluntarioHabilidad;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface VoluntarioHabilidadRepository {
     List<VoluntarioHabilidad> getAll();
 
