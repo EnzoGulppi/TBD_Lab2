@@ -28,7 +28,7 @@
               <a class="nav-link" href="/emergencia">Crear emergencia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tarea">Tareas</a>
+              <a class="nav-link" href="/regiones">Listar</a>
             </li>
             <li class="nav-item">
               <button @click="logout" class="btn btn-danger">
