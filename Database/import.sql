@@ -2,6 +2,24 @@ INSERT INTO institucion(nombre) VALUES ('Bomberos');
 INSERT INTO institucion(nombre) VALUES ('Carabineros');
 INSERT INTO institucion(nombre) VALUES ('Cruz roja');
 
+INSERT INTO region(nombre_region,geom) VALUES ('Metropolitana',ST_GeomFromText('POLYGON((-70.896607 -32.933391,-71.709595 -33.969179,-70.720825 -33.919051,-69.808960 -34.242080,-69.781494 -33.338177,-70.896607 -32.933391))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Valparaiso',ST_GeomFromText('POLYGON((-71.835937 -33.894357,-70.847168 -32.922249,-70.094604 -33.055867,-70.737304 -32.023213,-71.533813 -32.190722,-71.835937 -33.894357))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Araucania',ST_GeomFromText('POLYGON((-73.507689 -38.490503,-72.914427 -37.608067,-71.030272 -38.132757,-71.689452 -39.570058,-73.222045 -39.404721,-73.507689 -38.490503))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Ohiggins',ST_GeomFromText('POLYGON((-71.832275 -33.915633,-70.931396 -34.156894,-70.426025 -33.870035,-70.371093 -35.002628,-72.062988 -34.691568,-71.832275 -33.915633))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Maule',ST_GeomFromText('POLYGON((-72.107010 -34.841066,-70.423355 -35.039199,-70.448074 -35.887030,-70.957178 -36.377171,-72.694778 -35.953758,-72.107010 -34.841066))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Biobio',ST_GeomFromText('POLYGON((-73.522058 -38.405718,-72.552892 -37.631458,-71.065018 -38.084104,-71.208345 -37.132521,-72.921448 -36.569999,-73.522058 -38.405718))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Los rios',ST_GeomFromText('POLYGON((-73.209227 -39.418867,-71.687621 -39.571470,-71.874388 -40.580237,-72.593993 -40.688622,-73.714598 -40.245642,-73.209227 -39.418867))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Aysen',ST_GeomFromText('POLYGON((-73.060564 -43.723173,-71.77181 -44.05938,-73.12523 -49.15964,-75.603293 -48.511322,-75.639227 -46.719030,-73.060564 -43.723173))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Magallanes',ST_GeomFromText('POLYGON((-73.184613 -49.173491,-66.442327 -55.136311,-67.208925 -55.882397,-73.465429 -54.081906,-75.616093 -48.861903,-73.184613 -49.173491))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Antofagasta',ST_GeomFromText('POLYGON((-70.061647 -21.439006,-70.534059 -25.825850,-67.315065 -24.012596,-67.194215 -22.802767,-68.490602 -20.947330,-70.061647 -21.439006))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Atacama',ST_GeomFromText('POLYGON((-70.629274 -26.043209,-71.497194 -29.186934,-69.970094 -29.483837,-68.322145 -27.026099,-68.563844 -25.290644,-70.629274 -26.043209))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Coquimbo',ST_GeomFromText('POLYGON((-71.500856 -29.190131,-71.533815 -32.193819,-70.325319 -32.277456,-69.830934 -30.144729,-69.973757 -29.496587,-71.500856 -29.190131))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Tarapaca',ST_GeomFromText('POLYGON((-70.285035 -19.231632,-70.010377 -21.410455,-69.644166 -21.514830,-68.479616 -20.941345,-68.957521 -18.948286,-70.285035 -19.231632))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Los lagos',ST_GeomFromText('POLYGON((-71.762694 -44.047129,-71.993407 -40.712915,-73.714598 -40.247739,-74.395751 -43.268207,-73.033446 -43.738360,-71.762694 -44.047129))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Ñuble',ST_GeomFromText('POLYGON((-72.764470 -36.030953,-71.105968 -36.460293,-71.174220 -37.088978,-72.334488 -36.958200,-72.863151 -36.448587,-72.764470 -36.030953))', 4326));
+INSERT INTO region(nombre_region,geom) VALUES ('Arica y parinacota',ST_GeomFromText('POLYGON((-69.472047 -17.504372,-69.142457 -18.152809,-69.307252 -19.131327,-70.290528 -19.224717,-70.367432 -18.351047,-69.472047 -17.504372))', 4326));
+
+
 INSERT INTO estado(nombre) VALUES ('Activa'),('Finalizada');
 
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
@@ -33,7 +51,7 @@ VALUES ('Tsunami', 'Alta', '2023-01-30', 'Activa',  ST_GeomFromText('POLYGON((-7
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
 VALUES ('Derrame de petróleo', 'Alta', '2023-02-10', 'Finalizada',  ST_GeomFromText('POLYGON((-71.762694 -44.047129,-71.993407 -40.712915,-73.714598 -40.247739,-74.395751 -43.268207,-73.033446 -43.738360,-71.762694 -44.047129))', 4326), -73.045, -41.4719, ST_PointFromText('POINT(' || '-73.045' || ' ' || '-41.4719' || ')'), 3);
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region,  longitud, latitud, geom, id_institucion) 
-VALUES ('Colapso estructural', 'Media', '2023-04-19', 'Activa', ,ST_GeomFromText('POLYGON((-71.835937 -33.894357,-70.847168 -32.922249,-70.094604 -33.055867,-70.737304 -32.023213,-71.533813 -32.190722,-71.835937 -33.894357))', 4326), -71.6428, -33.0453, ST_PointFromText('POINT(' || '-71.6428' || ' ' || '-33.0453' || ')'), 1);
+VALUES ('Colapso estructural', 'Media', '2023-04-19', 'Activa', ST_GeomFromText('POLYGON((-71.835937 -33.894357,-70.847168 -32.922249,-70.094604 -33.055867,-70.737304 -32.023213,-71.533813 -32.190722,-71.835937 -33.894357))', 4326), -71.6428, -33.0453, ST_PointFromText('POINT(' || '-71.6428' || ' ' || '-33.0453' || ')'), 1);
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
 VALUES ('Ciclón', 'Alta', '2023-04-01', 'Finalizada', ST_GeomFromText('POLYGON((-72.107010 -34.841066,-70.423355 -35.039199,-70.448074 -35.887030,-70.957178 -36.377171,-72.694778 -35.953758,-72.107010 -34.841066))', 4326), -71.5397, -35.6769, ST_PointFromText('POINT(' || '-71.5397' || ' ' || '-35.6769' || ')'), 2);
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 

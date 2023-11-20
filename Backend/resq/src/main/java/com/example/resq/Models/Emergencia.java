@@ -10,7 +10,7 @@ public class Emergencia {
     private String gravedad;
     private String fecha;
     private String estado;
-    private String region;
+    private Integer id_region;
     private Double longitud;
     private Double latitud;
     private String geom;
@@ -56,12 +56,12 @@ public class Emergencia {
         this.estado = estado;
     }
 
-    public String getRegion() {
-        return region;
+    public Integer getIdRegion() {
+        return id_region;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public void setIdRegion(Integer id_region) {
+        this.id_region = id_region;
     }
 
     public Double getLongitud() {

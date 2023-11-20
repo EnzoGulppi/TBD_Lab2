@@ -20,6 +20,13 @@ DROP TABLE IF EXISTS institucion;
 
 DROP TABLE IF EXISTS queries_log;
 
+CREATE TABLE region(
+	id_region SERIAL PRIMARY KEY,
+	nombre_region VARCHAR(50),
+	geom GEOMETRY
+);
+
+
 CREATE TABLE institucion (
     id_institucion SERIAL PRIMARY KEY,
     nombre VARCHAR(255)

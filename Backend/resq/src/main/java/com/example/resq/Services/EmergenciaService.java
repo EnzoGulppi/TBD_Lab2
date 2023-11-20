@@ -5,7 +5,6 @@ import com.example.resq.Repository.EmergenciaRepository;
 import org.locationtech.jts.geom.Geometry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.resq.Functions.Polygon;
 
 import java.util.List;
 import java.util.Map;
@@ -16,10 +15,6 @@ import java.util.Objects;
 public class EmergenciaService {
     @Autowired
     private EmergenciaRepository emergenciaRepository;
-
-
-    private Polygon polygonToRegion;
-
 
 
     @GetMapping
@@ -49,7 +44,7 @@ public class EmergenciaService {
         String fecha = (String) json.get("fecha");
         String institucion = (String) json.get("institucion");
         String estado = (String) json.get("estado");
-        String region = (String) json.get("region");
+        Integer region = (Integer) json.get("region");
         //region = polygonToRegion.polygonToRegion(region);
         Double longitud = (Double) json.get("longitud");
         Double latitud = (Double) json.get("latitud");
@@ -73,7 +68,7 @@ public class EmergenciaService {
         salida.setFecha(fecha);
         salida.setIdInstitucion(idInstitucion);
         salida.setEstado(estado);
-        salida.setRegion(region);
+        salida.setIdRegion(region);
         salida.setLongitud(longitud);
         salida.setLatitud(latitud);
         emergenciaRepository.saveEmergencia(salida);
