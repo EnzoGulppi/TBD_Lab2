@@ -30,10 +30,7 @@ public class TareaService {
     public List<Tarea> findByEmergencia(@PathVariable("id_emergencia") Integer id_emergencia){
         return tareaRepository.findByEmergencia(id_emergencia);
     }
-    @GetMapping("/region/{region}")
-    public List<Tarea> findByRegionTarea(@PathVariable("region") String region){
-        return tareaRepository.findByRegion(region);
-    }
+
     @PostMapping
     public void save(@RequestBody Map<String, Object> json){
         String nombre = (String) json.get("nombre");

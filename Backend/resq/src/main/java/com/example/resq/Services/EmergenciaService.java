@@ -1,6 +1,7 @@
 package com.example.resq.Services;
 
 import com.example.resq.Models.Emergencia;
+import com.example.resq.Models.Tarea;
 import com.example.resq.Repository.EmergenciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
