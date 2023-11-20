@@ -11,4 +11,6 @@ public interface EmergenciaRepository {
     void deleteEmergencia(Integer id);
 
     List<Emergencia> getEmergenciasByEstado(String estado);
+
+    List<Emergencia> getEmergenciasByRegion(String region);
 }
