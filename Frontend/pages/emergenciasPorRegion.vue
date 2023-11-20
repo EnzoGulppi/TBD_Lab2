@@ -1,15 +1,17 @@
 <template>
-    <div>
+    <div class="detalles-page">
       <h1>Buscar Emergencias por Región</h1>
-      <input v-model="region" placeholder="Ingresa la región">
-      <button @click="buscarEmergencias">Buscar</button>
+      <div class="search-container">
+        <input v-model="region" placeholder="Ingresa la región" class="region-input">
+        <button @click="buscarEmergencias" class="search-button">Buscar</button>
+      </div>
   
-      <ul v-if="emergencias.length">
-        <li v-for="emergencia in emergencias" :key="emergencia.id">
+      <ul v-if="emergencias.length" class="emergencias-list">
+        <li v-for="emergencia in emergencias" :key="emergencia.id" class="emergencia-item">
           {{ emergencia.nombre }} - {{ emergencia.estado }}
         </li>
       </ul>
-      <p v-else>No hay emergencias para esta región.</p>
+      <p v-else class="no-emergencias">No hay emergencias para esta región.</p>
     </div>
   </template>
   
@@ -38,4 +40,45 @@
     }
   };
   </script>
+  
+  <style scoped>
+  /* Estilos para emular la apariencia anterior */
+  .detalles-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .region-input {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .emergencias-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .emergencia-item {
+    margin-bottom: 5px;
+  }
+  
+  .no-emergencias {
+    font-style: italic;
+  }
+  </style>
   
