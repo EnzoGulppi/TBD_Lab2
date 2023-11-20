@@ -63,15 +63,15 @@
                       <td>Región:</td>
                       <td>
                         <select
-                          v-model="region"
+                          v-model="id_region"
                           class="form-select custom-select"
-                          id="region"
+                          id="id_region"
                         >
-                          <option value="" disabled selected hidden>
+                          <option disabled selected hidden>
                             Selecciona una opción
                           </option>
                           <option
-                            v-for="regionObj in regionesChile" :key="regionObj.valor">
+                            v-for="regionObj in regionesChile" :value="regionObj.valor">
                             {{ regionObj.nombre }}
                           </option>
                         </select>
@@ -141,7 +141,7 @@
         gravedad: '',
         habilidadesSeleccionadas: [],
         selectedCoordinates: null,
-        region: '',
+        id_region: '',
         regionesChile: [
           {nombre: 'Arica y Parinacota', valor: 1},
           {nombre: 'Tarapaca', valor: 2},
@@ -153,11 +153,11 @@
           {nombre: 'Ohiggins', valor: 8},
           {nombre: 'Maule', valor: 9},
           {nombre: 'Ñuble', valor: 10},
-          {nombre: 'Biobío', valor: 11},
+          {nombre: 'Biobio', valor: 11},
           {nombre: 'La Araucania', valor: 12},
           {nombre: 'Los Rios', valor: 13},
           {nombre: 'Los Lagos', valor: 14},
-          {nombre: 'Aysén', valor: 15},
+          {nombre: 'Aysen', valor: 15},
           {nombre: 'Magallanes', valor: 16},
         ],
 
@@ -204,7 +204,7 @@
           this.gravedad == '' ||
           this.habilidadesSeleccionadas.length == 0 ||
           this.selectedCoordinates == null ||
-          this.region == ''
+          this.id_region == ''
         ) {
           alert('Por favor, complete todos los campos')
           return
@@ -220,7 +220,7 @@
           estado: 'Activa',
           latitud: this.selectedCoordinates.lat,
           longitud: this.selectedCoordinates.lng,
-          region: this.region
+          id_region: this.id_region
         }
         // Enviar emergencia
         try {
