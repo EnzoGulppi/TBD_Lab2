@@ -31,62 +31,8 @@
               <td>{{ registrados }}</td>
             </tr>
           </table>
-          <button class="btn btn-success" @click="registrarse">
-            Registrarse
-          </button>
         </div>
-        <!-- Voluntarios registrados -->
-        <div>
-          <h1>Voluntarios registrados</h1>
-          <table></table>
-
-          <table>
-            <tr>
-              <td>
-                <label for="exampleInputNumber">Número</label>
-              </td>
-              <td>
-                <input
-                  v-model="numeroVoluntarios"
-                  type="number"
-                  class="form-control col-6"
-                  id="exampleInputNumber"
-                  value="0"
-                />
-              </td>
-              <td colspan="6">
-                <button
-                  class="btn btn-success"
-                  @click="cargarVoluntariosProximos"
-                >
-                  Cargar Voluntarios
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Id</td>
-              <td>Rut</td>
-              <td>Nombres</td>
-              <td>Apellidos</td>
-              <td>Fecha Nac</td>
-              <td>Disponibilidad</td>
-              <td>Telefono</td>
-              <td>Region</td>
-            </tr>
-            <tr v-for="(objeto, indice) in voluntarios">
-              <td>{{ objeto.id }}</td>
-              <td>{{ objeto.rut }}</td>
-              <td>{{ objeto.nombres }}</td>
-              <td>{{ objeto.apellidos }}</td>
-              <td>{{ objeto.fecha_nac.slice(0, 10) }}</td>
-              <td>{{ objeto.disponibilidad }}</td>
-              <td>{{ objeto.telefono }}</td>
-              <td>{{ objeto.region }}</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div>
+        
         <!-- Formulario para crear una tarea -->
         <h2>Crear una tarea</h2>
         <form>
