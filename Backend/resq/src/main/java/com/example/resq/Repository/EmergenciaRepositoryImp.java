@@ -1,6 +1,7 @@
 package com.example.resq.Repository;
 
 import com.example.resq.Models.Emergencia;
+import org.locationtech.jts.geom.Geometry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
@@ -81,7 +82,7 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository{
     }
 
     @Override
-    public List<Emergencia> getEmergenciasByRegion(String region) {
+    public List<Emergencia> getEmergenciasByRegion(Geometry region) {
         String query = "SELECT * FROM Emergencia WHERE region = :region";
         try (Connection connection = sql2o.open()) {
             return connection.createQuery(query)
