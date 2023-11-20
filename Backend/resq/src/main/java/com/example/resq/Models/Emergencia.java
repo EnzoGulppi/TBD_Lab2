@@ -1,6 +1,7 @@
 package com.example.resq.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.locationtech.jts.geom.Geometry;
 
 public class Emergencia {
     @JsonProperty("id_emergencia")
@@ -9,7 +10,7 @@ public class Emergencia {
     private String gravedad;
     private String fecha;
     private String estado;
-    private String region;
+    private Geometry region;
     private Double longitud;
     private Double latitud;
     private String geom;
@@ -55,11 +56,11 @@ public class Emergencia {
         this.estado = estado;
     }
 
-    public String getRegion() {
+    public Geometry getRegion() {
         return region;
     }
 
-    public void setRegion(String region) {
+    public void setRegion(Geometry region) {
         this.region = region;
     }
 

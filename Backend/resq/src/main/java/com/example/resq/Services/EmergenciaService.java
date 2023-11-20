@@ -3,6 +3,7 @@ package com.example.resq.Services;
 import com.example.resq.Models.Emergencia;
 import com.example.resq.Models.Tarea;
 import com.example.resq.Repository.EmergenciaRepository;
+import org.locationtech.jts.geom.Geometry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +44,7 @@ public class EmergenciaService {
         String fecha = (String) json.get("fecha");
         String institucion = (String) json.get("institucion");
         String estado = (String) json.get("estado");
-        String region = (String) json.get("region");
+        Geometry region = (Geometry) json.get("region");
         Double longitud = (Double) json.get("longitud");
         Double latitud = (Double) json.get("latitud");
 
