@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS queries_log;
 CREATE TABLE region(
 	id_region SERIAL PRIMARY KEY,
 	nombre_region VARCHAR(50),
-	geom GEOMETRY
+	geom GEOMETRY(Polygon, 4326)
 );
 
 
@@ -38,7 +38,7 @@ CREATE TABLE emergencia (
     gravedad VARCHAR(255),
     fecha DATE,
     estado VARCHAR(255),
-    region GEOMETRY(Polygon, 4326),
+    id_region INTEGER,
     longitud DOUBLE PRECISION,
     latitud DOUBLE PRECISION,
     geom VARCHAR(255),
