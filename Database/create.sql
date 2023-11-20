@@ -20,6 +20,8 @@ DROP TABLE IF EXISTS institucion;
 
 DROP TABLE IF EXISTS queries_log;
 
+CREATE EXTENSION postgis;
+
 CREATE TABLE region(
 	id_region SERIAL PRIMARY KEY,
 	nombre_region VARCHAR(50),

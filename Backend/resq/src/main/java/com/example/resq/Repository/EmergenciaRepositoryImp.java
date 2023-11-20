@@ -45,15 +45,15 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository{
     public void saveEmergencia(Emergencia emergencia) {
         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate fecha = LocalDate.parse(emergencia.getFecha(), formatoFecha);
-        String query = "INSERT INTO Emergencia (nombre, gravedad, fecha, estado, region, longitud, latitud, id_institucion, geom) " +
-                "VALUES (:nombre, :gravedad, :fecha, :estado, :region, :longitud, :latitud, :id_institucion, ST_PointFromText('POINT(' || :longitud || ' ' || :latitud || ')'))";
+        String query = "INSERT INTO Emergencia (nombre, gravedad, fecha, estado, id_region, longitud, latitud, id_institucion, geom) " +
+                "VALUES (:nombre, :gravedad, :fecha, :estado, :id_region, :longitud, :latitud, :id_institucion, ST_PointFromText('POINT(' || :longitud || ' ' || :latitud || ')'))";
         try (Connection connection = sql2o.open()) {
             connection.createQuery(query)
                     .addParameter("nombre", emergencia.getNombre())
                     .addParameter("gravedad", emergencia.getGravedad())
                     .addParameter("fecha",fecha)
                     .addParameter("estado", emergencia.getEstado())
-                    .addParameter("region", emergencia.getRegion())
+                    .addParameter("id_region", emergencia.getIdRegion())
                     .addParameter("longitud", emergencia.getLongitud())
                     .addParameter("latitud", emergencia.getLatitud())
                     .addParameter("id_institucion", emergencia.getIdInstitucion())
@@ -82,11 +82,11 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository{
     }
 
     @Override
-    public List<Emergencia> getEmergenciasByRegion(String region) {
-        String query = "SELECT * FROM Emergencia WHERE region = :region";
+    public List<Emergencia> getEmergenciasByRegion(Integer id_region) {
+        String query = "SELECT * FROM Emergencia WHERE id_region = :id_region";
         try (Connection connection = sql2o.open()) {
             return connection.createQuery(query)
-                    .addParameter("region", region)
+                    .addParameter("id_region", id_region)
                     .executeAndFetch(Emergencia.class);
         }
     }

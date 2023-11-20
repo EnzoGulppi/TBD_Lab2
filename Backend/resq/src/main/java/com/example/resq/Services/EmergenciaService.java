@@ -33,8 +33,8 @@ public class EmergenciaService {
         return emergenciaRepository.getEmergenciasByEstado(estado);
     }
     @GetMapping("/region/{region}")
-    public List<Emergencia> getEmergenciaByRegion(@PathVariable String region) {
-        return emergenciaRepository.getEmergenciasByRegion(region);
+    public List<Emergencia> getEmergenciaByRegion(@PathVariable Integer id_region) {
+        return emergenciaRepository.getEmergenciasByRegion(id_region);
     }
 
     @PostMapping
@@ -44,8 +44,7 @@ public class EmergenciaService {
         String fecha = (String) json.get("fecha");
         String institucion = (String) json.get("institucion");
         String estado = (String) json.get("estado");
-        Integer region = (Integer) json.get("region");
-        //region = polygonToRegion.polygonToRegion(region);
+        Integer id_region = (Integer) json.get("id_region");
         Double longitud = (Double) json.get("longitud");
         Double latitud = (Double) json.get("latitud");
 
@@ -53,7 +52,7 @@ public class EmergenciaService {
         System.out.println("Gravedad: " + gravedad);
         System.out.println("Fecha: " + fecha.toString());
         System.out.println("Institucion: " + institucion);
-        System.out.println("Region: " + region);
+        System.out.println("Region: " + id_region);
         System.out.println("Longitud: " + longitud);
         System.out.println("Latitud: " + latitud);
 
@@ -68,7 +67,7 @@ public class EmergenciaService {
         salida.setFecha(fecha);
         salida.setIdInstitucion(idInstitucion);
         salida.setEstado(estado);
-        salida.setIdRegion(region);
+        salida.setIdRegion(id_region);
         salida.setLongitud(longitud);
         salida.setLatitud(latitud);
         emergenciaRepository.saveEmergencia(salida);

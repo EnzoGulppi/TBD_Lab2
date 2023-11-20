@@ -22,64 +22,64 @@ INSERT INTO region(nombre_region,geom) VALUES ('Magallanes',ST_GeomFromText('POL
 
 INSERT INTO estado(nombre) VALUES ('Activa'),('Finalizada');
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Terremoto', 'Alta', '2022-11-01', 'Activa',7, -70.6483, -33.4567, ST_PointFromText('POINT(' || '-70.6483' || ' ' || '-33.4567' || ')'), 1);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion)
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion)
  VALUES ('Inundación', 'Media', '2022-12-10', 'Finalizada',6, -71.6328, -33.0472, ST_PointFromText('POINT(' || '-71.6328' || ' ' || '-33.0472' || ')'), 3);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Incendio forestal', 'Alta', '2023-01-15', 'Activa', 12, -72.9352, -38.7414, ST_PointFromText('POINT(' || '-72.9352' || ' ' || '-38.7414' || ')'), 1);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Deslizamiento de tierra', 'Baja', '2023-02-20', 'Finalizada',  8, -70.9667, -34.6633, ST_PointFromText('POINT(' || '-70.9667' || ' ' || '-34.6633' || ')'), 2);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Sequía', 'Media', '2023-03-25', 'Activa',9, -71.5375, -35.675, ST_PointFromText('POINT(' || '-71.5375' || ' ' || '-35.675' || ')'), 3);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion)
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion)
  VALUES ('Temporal de viento', 'Alta', '2023-04-30', 'Finalizada',  11, -73.0503, -36.7789, ST_PointFromText('POINT(' || '-73.0503' || ' ' || '-36.7789' || ')'), 1);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Accidente de tránsito', 'Media', '2023-05-05', 'Activa',  13, -72.6361, -39.8383, ST_PointFromText('POINT(' || '-72.636' || ' ' || '-39.8383' || ')'), 2);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Incendio estructural', 'Alta', '2023-01-20', 'Finalizada', 15, -72.7095, -45.5714, ST_PointFromText('POINT(' || '-72.7095' || ' ' || '-45.5714' || ')'), 3);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Erupción volcánica', 'Alta', '2022-12-26', 'Activa', 16, -72.9322, -53.1639, ST_PointFromText('POINT(' ||'-72.9322' || ' ' || '-53.1639' || ')'), 1);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region,  longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region,  longitud, latitud, geom, id_institucion) 
 VALUES ('Desbordamiento de río', 'Media', '2023-05-08', 'Finalizada', 3, -70.3133, -23.6519, ST_PointFromText('POINT(' || '-70.3133' || ' ' || '-23.6519' || ')'), 2);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region,  longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region,  longitud, latitud, geom, id_institucion) 
 VALUES ('Nevada', 'Baja', '2023-02-13', 'Activa',4, -69.6706, -27.3667, ST_PointFromText('POINT(' || '-69.6706' || ' ' || '-27.3667' || ')'), 3);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region,  longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region,  longitud, latitud, geom, id_institucion) 
 VALUES ('Incidente químico', 'Media', '2023-02-01', 'Finalizada',  5, -71.3381, -29.9592, ST_PointFromText('POINT(' || '-71.3381' || ' ' || '-29.9592' || ')'), 1);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region,  longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region,  longitud, latitud, geom, id_institucion) 
 VALUES ('Tsunami', 'Alta', '2023-01-30', 'Activa',2, -70.145, -20.2275, ST_PointFromText('POINT(' || '-70.145' || ' ' || '-20.2275' || ')'), 2);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Derrame de petróleo', 'Alta', '2023-02-10', 'Finalizada',  14, -73.045, -41.4719, ST_PointFromText('POINT(' || '-73.045' || ' ' || '-41.4719' || ')'), 3);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region,  longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region,  longitud, latitud, geom, id_institucion) 
 VALUES ('Colapso estructural', 'Media', '2023-04-19', 'Activa', 6, -71.6428, -33.0453, ST_PointFromText('POINT(' || '-71.6428' || ' ' || '-33.0453' || ')'), 1);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Ciclón', 'Alta', '2023-04-01', 'Finalizada', 9, -71.5397, -35.6769, ST_PointFromText('POINT(' || '-71.5397' || ' ' || '-35.6769' || ')'), 2);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Fuga de gas', 'Media', '2023-01-05', 'Activa',11, -73.0503, -36.7789, ST_PointFromText('POINT(' || '-73.0503' || ' ' || '-36.7789 '|| ')'), 3);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Incidente eléctrico', 'Baja', '2023-01-24', 'Finalizada',13, -72.6361, -39.8383, ST_PointFromText('POINT(' || '-72.6361' || ' ' || '-39.8383' || ')'), 1);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region,  longitud, latitud, geom, id_institucion)
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region,  longitud, latitud, geom, id_institucion)
 VALUES ('Deslave', 'Alta', '2023-02-27', 'Activa',  15, -72.7095, -45.5714, ST_PointFromText('POINT(' || '-72.7095' || ' ' || '-45.5714' || ')'), 2);
 
-INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
+INSERT INTO emergencia(nombre, gravedad, fecha, estado, id_region, longitud, latitud, geom, id_institucion) 
 VALUES ('Explosión', 'Alta', '2023-04-04', 'Finalizada', 16, -72.9322, -53.1639, ST_PointFromText('POINT(' || '-72.9322' || ' ' || '-53.1639' || ')'), 3);
 
 INSERT INTO voluntario(rut, nombres, apellidos, fecha_nac, disponibilidad, telefono, rol, contrasena, region, longitud, latitud, geom) VALUES('22222222-2', 'Maria', 'Lopez', '1985-09-20', 'Todos los dias', '+56987654321', 'Coordinador', 'password2', 'Valparaiso', -71.5393, -33.0458, ST_PointFromText('POINT(' || '-71.5393' || ' ' || '-33.0458' || ')'));
