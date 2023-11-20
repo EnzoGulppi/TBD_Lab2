@@ -29,4 +29,7 @@ public class RegionService {
     @PutMapping
     @ResponseBody
     public Region updateRegion(@RequestBody Region region){return regionRepository.updateRegion(region);}
+
+    @GetMapping("/{nombre}")
+    public Integer getIdByNombre(@PathVariable("nombre") String nombre){return regionRepository.getIdByNombre(nombre);}
 }

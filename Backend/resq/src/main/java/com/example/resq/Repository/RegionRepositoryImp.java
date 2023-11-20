@@ -86,4 +86,18 @@ public class RegionRepositoryImp implements RegionRepository{
         }
         return null;
     }
+
+    @Override
+    public Integer getIdByNombre(String nombre){
+        String query = "SELECT * FROM region WHERE nombre_region = :nombre";
+        try (Connection connection = sql2o.open()){
+            Integer id = connection.createQuery(query)
+                    .addParameter("nombre_region", nombre)
+                    .executeAndFetchFirst(Integer.class);
+            return id;
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
 }

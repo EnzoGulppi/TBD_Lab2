@@ -10,4 +10,6 @@ public interface RegionRepository {
     void saveRegion(Region region);
     void deleteRegion(Integer id_region);
     Region updateRegion(Region region);
+
+    Integer getIdByNombre(String nombre);
 }
