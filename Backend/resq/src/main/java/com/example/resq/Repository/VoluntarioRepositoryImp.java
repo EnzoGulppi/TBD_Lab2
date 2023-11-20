@@ -60,8 +60,8 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     @Override
     public List<Voluntario> traerVoluntariosCercanos(Integer id_emergencia, Integer limite){
         List<Voluntario> salida;
-        String query = "SELECT vol.id, vol.rut, vol.nombres, vol.apellidos, vol.fechaNacimiento, vol.disponibilidad, vol.telefono, vol.rol, vol.contrasena, vol.region, vol.longitud, vol.latitud, vol.geom " +
-                "FROM( SELECT (ST_Distance (eme.geom, vol.geom)) AS distancias, vol.id, vol.rut, vol.nombres, vol.apellidos, vol.fechaNacimiento, vol.disponibilidad, vol.telefono, vol.rol, vol.contrasena, vol.region, vol.longitud, vol.latitud, vol.geom " +
+        String query = "SELECT vol.id, vol.rut, vol.nombres, vol.apellidos, vol.fecha_nac, vol.disponibilidad, vol.telefono, vol.rol, vol.contrasena, vol.region, vol.longitud, vol.latitud, vol.geom " +
+                "FROM( SELECT (ST_Distance (eme.geom, vol.geom)) AS distancias, vol.id, vol.rut, vol.nombres, vol.apellidos, vol.fecha_nac, vol.disponibilidad, vol.telefono, vol.rol, vol.contrasena, vol.region, vol.longitud, vol.latitud, vol.geom " +
                 "FROM emergencia AS eme " +
                 "INNER JOIN voluntario_emergencia as volEme ON volEme.id_emergencia = eme.id_emergencia " +
                 "INNER JOIN voluntario as vol ON volEme.id_voluntario = vol.id " +
@@ -109,7 +109,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
                     .addParameter("rut", voluntario.getRut())
                     .addParameter("nombres", voluntario.getNombres())
                     .addParameter("apellidos", voluntario.getApellidos())
-                    .addParameter("fechaNacimiento", voluntario.getFecha_nac())
+                    .addParameter("fecha_nac", voluntario.getFecha_nac())
                     .addParameter("disponibilidad", voluntario.getDisponibilidad())
                     .addParameter("telefono", voluntario.getTelefono())
                     .addParameter("rol", voluntario.getRol())
@@ -134,7 +134,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
                     .addParameter("rut", voluntario.getRut())
                     .addParameter("nombres", voluntario.getNombres())
                     .addParameter("apellidos", voluntario.getApellidos())
-                    .addParameter("fechaNacimiento", voluntario.getFecha_nac())
+                    .addParameter("fecha_nac", voluntario.getFecha_nac())
                     .addParameter("disponibilidad", voluntario.getDisponibilidad())
                     .addParameter("telefono", voluntario.getTelefono())
                     .addParameter("rol", voluntario.getRol())

@@ -6,9 +6,9 @@ INSERT INTO estado(nombre) VALUES ('Activa'),('Finalizada');
 
 
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
-VALUES ('Terremoto', 'Alta', '2022-11-01', 'Activa', ST_GeomFromText('POLYGON((-70.896607 -32.933391,-71.709595 -33.969179,-70.720825 -33.919051,-69.808960 -34.242080,-69.781494 -33.338177,-70.896607 -32.933391))', 4326), -70.6483, -33.4567, ST_PointFromText('POINT('  '-70.6483'  ' '  '-33.4567'  ')'), 1);
+VALUES ('Terremoto', 'Alta', '2022-11-01', 'Activa', ST_GeomFromText('POLYGON((-70.896607 -32.933391,-71.709595 -33.969179,-70.720825 -33.919051,-69.808960 -34.242080,-69.781494 -33.338177,-70.896607 -32.933391))', 4326), -70.6483, -33.4567, ST_PointFromText('POINT(' || '-70.6483' || ' ' || '-33.4567' || ')'), 1);
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion)
- VALUES ('Inundación', 'Media', '2022-12-10', 'Finalizada', ST_GeomFromText('POLYGON((-71.832473 -33.895129,-70.989272 -32.958414,-70.113113 -33.048246,-70.343826 -32,299181,-71.461684 -32.222536,-71.832473 -33.895129))', 4326), -71.6328, -33.0472, ST_PointFromText('POINT(' || '-71.6328' || ' ' || '-33.0472' || ')'), 3);
+ VALUES ('Inundación', 'Media', '2022-12-10', 'Finalizada', ST_GeomFromText('POLYGON((-71.835937 -33.894357,-70.847168 -32.922249,-70.094604 -33.055867,-70.737304 -32,023213,-71.533813 -32.190722,-71.835937 -33.894357))', 4326), -71.6328, -33.0472, ST_PointFromText('POINT(' || '-71.6328' || ' ' || '-33.0472' || ')'), 3);
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
 VALUES ('Incendio forestal', 'Alta', '2023-01-15', 'Activa', ST_GeomFromText('POLYGON((-39.367274 -73.201278,-39.583274 -71.508650,-38.491242 -73.501582,-37.658479 -72.552892,-38.110960 -71.071843,-39.367274 -73.201278))', 4326), -72.9352, -38.7414, ST_PointFromText('POINT(' || '-72.9352' || ' ' || '-38.7414' || ')'), 1);
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
@@ -34,7 +34,7 @@ VALUES ('Tsunami', 'Alta', '2023-01-30', 'Activa', ST_GeomFromText('POLYGON((-70
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
 VALUES ('Derrame de petróleo', 'Alta', '2023-02-10', 'Finalizada', ST_GeomFromText('POLYGON((-43.727752 -73.031082,-44.067097 -71.788912,-40.279332 -74.764228,-40.596206 -71.877206,-42.046701 -71.754354,-43.727752 -73.031082))', 4326), -73.045, -41.4719, ST_PointFromText('POINT(' || '-73.045' || ' ' || '-41.4719' || ')'), 3);
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
-VALUES ('Colapso estructural', 'Media', '2023-04-19', 'Activa', ST_GeomFromText('POLYGON((-71.832473 -33.895129,-70.989272 -32.958414,-70.113113 -33.048246,-70.343826 -32,299181,-71.461684 -32.222536,-71.832473 -33.895129))', 4326), -71.6428, -33.0453, ST_PointFromText('POINT(' || '-71.6428' || ' ' || '-33.0453' || ')'), 1);
+VALUES ('Colapso estructural', 'Media', '2023-04-19', 'Activa', ST_GeomFromText('POLYGON((-71.832473 -33.895129,-70.989272 -32.958414,-70.113113 -33.048246,-70.343826 -32.299181,-71.461684 -32.222536,-71.832473 -33.895129))', 4326), -71.6428, -33.0453, ST_PointFromText('POINT(' || '-71.6428' || ' ' || '-33.0453' || ')'), 1);
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
 VALUES ('Ciclón', 'Alta', '2023-04-01', 'Finalizada', ST_GeomFromText('POLYGON((-72.107010 -34.841066,-70.423355 -35.039199,-70.448074 -35.887030,-70.957178 -36.377171,-72.694778 -35.953758,-72.107010 -34.841066))', 4326), -71.5397, -35.6769, ST_PointFromText('POINT(' || '-71.5397' || ' ' || '-35.6769' || ')'), 2);
 INSERT INTO emergencia(nombre, gravedad, fecha, estado, region, longitud, latitud, geom, id_institucion) 
