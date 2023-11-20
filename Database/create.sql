@@ -31,7 +31,7 @@ CREATE TABLE emergencia (
     gravedad VARCHAR(255),
     fecha DATE,
     estado VARCHAR(255),
-    region VARCHAR(255),
+    region GEOMETRY(Polygon, 4326),
     longitud DOUBLE PRECISION,
     latitud DOUBLE PRECISION,
     geom VARCHAR(255),
