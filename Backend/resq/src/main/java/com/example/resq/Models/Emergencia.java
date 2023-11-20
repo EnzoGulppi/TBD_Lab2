@@ -11,7 +11,6 @@ public class Emergencia {
     private String fecha;
     private String estado;
     private String region;
-    private Geometry poligono;
     private Double longitud;
     private Double latitud;
     private String geom;
@@ -97,11 +96,5 @@ public class Emergencia {
         this.id_institucion = idInstitucion;
     }
 
-    public Geometry getPoligono() {
-        return poligono;
-    }
 
-    public void setPoligono(Geometry poligono) {
-        this.poligono = poligono;
-    }
 }
