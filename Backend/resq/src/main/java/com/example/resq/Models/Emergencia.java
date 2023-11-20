@@ -10,7 +10,8 @@ public class Emergencia {
     private String gravedad;
     private String fecha;
     private String estado;
-    private Geometry region;
+    private String region;
+    private Geometry poligono;
     private Double longitud;
     private Double latitud;
     private String geom;
@@ -56,11 +57,11 @@ public class Emergencia {
         this.estado = estado;
     }
 
-    public Geometry getRegion() {
+    public String getRegion() {
         return region;
     }
 
-    public void setRegion(Geometry region) {
+    public void setRegion(String region) {
         this.region = region;
     }
 
@@ -94,5 +95,13 @@ public class Emergencia {
 
     public void setIdInstitucion(Integer idInstitucion) {
         this.id_institucion = idInstitucion;
+    }
+
+    public Geometry getPoligono() {
+        return poligono;
+    }
+
+    public void setPoligono(Geometry poligono) {
+        this.poligono = poligono;
     }
 }

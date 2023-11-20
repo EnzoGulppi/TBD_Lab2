@@ -1,14 +1,14 @@
 <template>
-  <div class='tarea-page'>
+  <div class='emergencia-page'>
     <NavBar />
-    <div id="tareasContent">
+    <div id="emergenciaContent">
       <div>
         <br>
-        <h1 class="text-left">Tareas</h1>
+        <h1 class="text-left">Filtrar</h1>
         <section>
           <br>
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="text-left">Filtrar tareas por región</h2>
+            <h2 class="text-left">Filtrar emergencias por región</h2>
             <div>
               <select class="form-select" v-model="regionFiltrar">
                 <option disabled selected hidden>Seleccione una región</option>
@@ -16,8 +16,8 @@
                   {{ objeto }}
                 </option>
               </select>
-              <button class="btn btn-primary ml-3" @click="cargarTareasFiltradas">
-                Filtrar 🔍
+              <button class="btn btn-primary ml-3" @click="cargarEmergenciasFiltradas">
+                Filtrar
               </button>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default {
       // Filtrar tareas por region
       regionFiltrar: '',
 
-      tareasFiltradas: null,
+      emergenciasFiltradas: null,
       puntos: [],
 
       // Select de regiones
@@ -63,43 +63,36 @@ export default {
     }
   },
   methods: {
-    async cargarTareasFiltradas() {
+    async cargarEmergenciasFiltradas() {
       if (this.regionFiltrar == undefined) {
         alert('Debe escoger una región')
       }
       try {
-        this.puntos = []
         const response = await axios.get(
-          `http://localhost:8080/api/tareas/region`,
-          {
-            params: {
-              region: this.regionFiltrar,
-            },
-          }
+          `http://localhost:8080/api/emergencias/region/${this.regionFiltrar}`,
         )
-        console.log('Tareas filtradas pedidas: ', response)
-        this.tareasFiltradas = response.data
-        for (let i = 0; i < this.tareasFiltradas.length; i++) {
-          const tarea = this.tareasFiltradas[i]
-          const punto = {
-            latLng: [tarea.latitud, tarea.longitud],
-            name: tarea.nombre,
+        if (response.ok) {
+            const data = await response.json();
+            this.emergencias = data;
+          } else {
+            console.error('No se pudo obtener la lista de emergencias.');
           }
-          this.puntos.push(punto)
+        } catch (error) {
+          console.error('Error al buscar emergencias:', error);
         }
-      } catch (error) {}
-    },
-  },
-}
+      }
+    }
+  };
+  
 </script>
 <style>
-#tareasContent {
+#emergenciaContent {
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
-.tarea-page {
+.emergencia-page {
   background-image: url('/fondo.jpg');
   background-size: cover;
   background-repeat: no-repeat;

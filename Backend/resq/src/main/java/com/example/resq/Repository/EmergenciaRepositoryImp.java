@@ -82,7 +82,7 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository{
     }
 
     @Override
-    public List<Emergencia> getEmergenciasByRegion(Geometry region) {
+    public List<Emergencia> getEmergenciasByRegion(String region) {
         String query = "SELECT * FROM Emergencia WHERE region = :region";
         try (Connection connection = sql2o.open()) {
             return connection.createQuery(query)

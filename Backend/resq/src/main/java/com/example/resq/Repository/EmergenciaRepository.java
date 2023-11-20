@@ -13,5 +13,5 @@ public interface EmergenciaRepository {
 
     List<Emergencia> getEmergenciasByEstado(String estado);
 
-    List<Emergencia> getEmergenciasByRegion(Geometry region);
+    List<Emergencia> getEmergenciasByRegion(String region);
 }

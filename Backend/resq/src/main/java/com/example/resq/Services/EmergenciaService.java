@@ -1,11 +1,11 @@
 package com.example.resq.Services;
 
 import com.example.resq.Models.Emergencia;
-import com.example.resq.Models.Tarea;
 import com.example.resq.Repository.EmergenciaRepository;
 import org.locationtech.jts.geom.Geometry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.example.resq.Functions.Polygon;
 
 import java.util.List;
 import java.util.Map;
@@ -16,6 +16,11 @@ import java.util.Objects;
 public class EmergenciaService {
     @Autowired
     private EmergenciaRepository emergenciaRepository;
+
+
+    private Polygon polygonToRegion;
+
+
 
     @GetMapping
     public List<Emergencia> getAllEmergencias() {
@@ -33,7 +38,7 @@ public class EmergenciaService {
         return emergenciaRepository.getEmergenciasByEstado(estado);
     }
     @GetMapping("/region/{region}")
-    public List<Emergencia> getEmergenciaByRegion(@PathVariable Geometry region) {
+    public List<Emergencia> getEmergenciaByRegion(@PathVariable String region) {
         return emergenciaRepository.getEmergenciasByRegion(region);
     }
 
@@ -44,7 +49,8 @@ public class EmergenciaService {
         String fecha = (String) json.get("fecha");
         String institucion = (String) json.get("institucion");
         String estado = (String) json.get("estado");
-        Geometry region = (Geometry) json.get("region");
+        String region = (String) json.get("region");
+        //region = polygonToRegion.polygonToRegion(region);
         Double longitud = (Double) json.get("longitud");
         Double latitud = (Double) json.get("latitud");
 
