@@ -1,6 +1,6 @@
 # TBD_Lab2
 
-Integrantes: 
+##Integrantes: 
 	-Enzo Gulppi
 	-Alexandra Navarro
 	-Marcelo Godoy
