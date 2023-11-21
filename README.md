@@ -11,13 +11,13 @@ La entrega de laboratorio consiste en realizar una web en base a la descripción
 
 El backend es una REST API hecha en Java springboot con sql2o más un Frontend para las vistas utilizando Vue.js y Nuxt.
 
-### Descripción del repositorio:
+# Descripción del repositorio:
 El entregable se encuentra en este repositorio (link) y esta separado en 3 carpetas correspondiente a cada proyecto individual:
 1. Frontend
 1. Backend
 1. Base de datos
 
-### Requisitos para ejecutar el proyecto:
+# Requisitos para ejecutar el proyecto:
 Para poder ejecutar el proyecto de forma completa, debemos contar con las siguientes herramientas:
 - PostgreSQL versión 12
 - Spring Boot maven.
@@ -36,10 +36,10 @@ Instalar PostgreSQL 12 y PGAdmin 4: Para ello, se puede instalar un pack en conj
 
 Instalar IntelliJ IDEA Ultimate: Ingresar al sitio web oficial de IntelliJ IDEA y seleccionar el instalador dependiendo del Sistema Operativo en uso.
 
-### Instalación del Backend:
+# Instalación del Backend:
 Una vez instalado Intellij Idea, abrir el proyecto mediante la pestaña file → open, tal como se muestra en las siguientes imagenes, una vez seleccionado el proyecto, esperamos que se configuren los plugins necesarios y si fuera el caso, que se instalen.
 
-### Instalación Base de Datos:
+# Instalación Base de Datos:
 
 ### Instalación de Frontend:
 Instalar la version mas reciente y estable de Node JS del siguiente sitio web:       y seguir los pasos de instalación.
