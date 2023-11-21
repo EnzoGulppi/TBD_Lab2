@@ -20,16 +20,16 @@ El entregable se encuentra en este repositorio (link) y esta separado en 3 carpe
 ### Requisitos para ejecutar el proyecto:
 Para poder ejecutar el proyecto de forma completa, debemos contar con las siguientes herramientas:
 - PostgreSQL versión 12
-- Spring Boot maven v…….
-- Vue js v…..
+- Spring Boot maven.
+- Vue js.
 - JDK Java 11
-- Node js v +18
+- Node js versión +18
 - Npm +9 (Viene por defecto con npm
-- Postman v +9 (Opcional)
+- Postman versión +9 (Opcional)
 - IDE VS CODE (Recomendado para Frontend)
 - IDE Intellinj Idea Ultimate (Recomendado para Backend)
 
-### Instrucciones para la instalación:
+# Instrucciones para la instalación:
 Clonar repositorio, para eso, abrir terminal de su sistema operativo (en este caso windows)
 
 Instalar PostgreSQL 12 y PGAdmin 4: Para ello, se puede instalar un pack en conjunto, se debe seleccionar la versión deseada para el Sistema Operativo deseado y seguir las instrucciones de instalación. Durante la instalación es necesario configurar un username y un password para utilizar con PostgreSQL. Estos serán luego necesarios para la creación de la Base de Datos junto con sus tablas.
