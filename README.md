@@ -13,21 +13,21 @@ El backend es una REST API hecha en Java springboot con sql2o más un Frontend p
 
 ### Descripción del repositorio:
 El entregable se encuentra en este repositorio (link) y esta separado en 3 carpetas correspondiente a cada proyecto individual:
-	1.- Frontend
-	2.- Backend
-	3.- Base de datos
+1. Frontend
+1. Backend
+1. Base de datos
 
 ### Requisitos para ejecutar el proyecto:
 Para poder ejecutar el proyecto de forma completa, debemos contar con las siguientes herramientas:
-	-PostgreSQL versión 12
-	-Spring Boot maven v…….
-	-Vue js v…..
-	-JDK Java 11
-	-Node js v +18
-	-Npm +9 (Viene por defecto con npm
-	-Postman v +9 (Opcional)
-	-IDE VS CODE (Recomendado para Frontend)
-	-IDE Intellinj Idea Ultimate (Recomendado para Backend)
+- PostgreSQL versión 12
+- Spring Boot maven v…….
+- Vue js v…..
+- JDK Java 11
+- Node js v +18
+- Npm +9 (Viene por defecto con npm
+- Postman v +9 (Opcional)
+- IDE VS CODE (Recomendado para Frontend)
+- IDE Intellinj Idea Ultimate (Recomendado para Backend)
 
 ### Instrucciones para la instalación:
 Clonar repositorio, para eso, abrir terminal de su sistema operativo (en este caso windows)
