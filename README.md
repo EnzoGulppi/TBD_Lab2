@@ -47,6 +47,19 @@ Se debe crear una base de datos y esta se debe configurar en "Application.proper
 - db.password=1212
 
 # Instalación de Frontend:
-Instalar la version mas reciente y estable de Node JS del siguiente sitio web:       y seguir los pasos de instalación.
-Abrir con VS CODE el proyecto de frontend, de forma similar como se abre el proyecto de backend, seguir imagenes de referencia.
+Instalar la version mas reciente y estable de Node JS del siguiente sitio web:  https://nodejs.org/en  y seguir los pasos de instalación.
+Abrir con VS CODE el proyecto de frontend, de forma similar como se abre el proyecto de backend.
 Abrir la terminar en VS CODE y escribir los siguientes comandos:
+- npm i vue
+- npm install
+- npm i nuxt
+- npm i axios
+- npm i leaflet vue2-leaflet
+
+# Instrucciones de uso
+1. En PgAdmin, seleccionar la opción "Query tool" y copiar la primera parte del script create.sql para solo crear las tablas.
+2. Abrir la opción Query tool nuevamente, pero dentro de [database] (La Base de Datos que se crea en el paso 1) y copiar el resto de dbCreate.
+3. Copiar todo el contenido de import.sql y ejecutarlo dentro de Query tool, posteriormente, deberá abrir dos Query Tool adicionales, donde copiará y ejecutará contenido de los archivos TriggersQueries.sql y ProcedimientoAlmacenado.sql en cada Query Tool y en ese mismo orden para evitar errores.
+4. Utilizando IntelliJ IDEA Ultimate, asegurarse de que se detecte correctamente Spring Boot y Maven. Ejecutar la aplicación haciendo click en la opción "Run" dentro de IntelliJ IDEA.
+5. Dentro de la carpeta Frontend, abrir una consola / terminal. Ejecutar el siguiente comando: " npm run dev ".
+Con esto ya tenemos levantado FrontEnd y Backend, por lo que podemos comenzar a utilizar la aplicación
