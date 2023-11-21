@@ -32,7 +32,7 @@ public class EmergenciaService {
     public List<Emergencia> getEmergenciaByEstado(@PathVariable String estado) {
         return emergenciaRepository.getEmergenciasByEstado(estado);
     }
-    @GetMapping("/region/{region}")
+    @GetMapping("/region/{id_region}")
     public List<Emergencia> getEmergenciaByRegion(@PathVariable Integer id_region) {
         return emergenciaRepository.getEmergenciasByRegion(id_region);
     }
