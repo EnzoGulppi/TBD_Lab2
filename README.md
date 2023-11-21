@@ -39,12 +39,12 @@ Instalar IntelliJ IDEA Ultimate: Ingresar al sitio web oficial de IntelliJ IDEA 
 # Instalación del Backend:
 Una vez instalado Intellij Idea, abrir el proyecto, una vez seleccionado el proyecto, esperamos que se configuren los plugins necesarios y si fuera el caso, que se instalen.
 
-## Instalación Base de Datos:
+# Instalación Base de Datos:
 Se debe crear una base de datos y esta se debe configurar en "Application.properties" ubicada eb la carpeta "Resourses" de la siguiente manera:
-server.port=8080
-db.url=jdbc:postgresql://localhost:5432/resq2
-db.username=postgres
-db.password=1212
+- server.port=8080
+- db.url=jdbc:postgresql://localhost:5432/resq2
+- db.username=postgres
+- db.password=1212
 
 # Instalación de Frontend:
 Instalar la version mas reciente y estable de Node JS del siguiente sitio web:       y seguir los pasos de instalación.
